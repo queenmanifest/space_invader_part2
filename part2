@@ -1,0 +1,14 @@
+import pygame
+
+#intialize the pygame
+pygame.init()
+
+#create the sceen
+screen = pygame.display.set_mode((1200, 650))
+
+#game loop
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.quit():
+            running = False
