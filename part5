@@ -1,0 +1,33 @@
+import pygame
+
+#intialize the pygame
+pygame.init()
+
+#create the sceen
+screen = pygame.display.set_mode((1200, 650))
+
+#title & icon
+pygame.display.set_caption("Space Invader")
+icon = pygame.image.load('ufo.png')
+pygame.display.set_icon(icon)
+
+#player
+playerIMG = pygame.image.load('player.png')
+playerX = 600
+playerY = 325
+
+def player(x,y):
+    screen.blit(playerIMG,(x, y))
+
+#game loop
+running = True
+while running:
+
+    #RBG - Color
+    screen.fill((255,0,0))
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+
+    player(playerX, playerY)
+    pygame.display.update()
